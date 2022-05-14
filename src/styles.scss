@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+/* *reset css */
+
+@import "./colors";
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: $bg-color;
+
+  #quote-box {
+    display: flex;
+    margin: auto;
+    height: 60vh;
+    flex-direction: column;
+    width: 40vw;
+    position: relative;
+    top: 20vh;
+
+    #text {
+      font-size: 50px;
+      font-weight: 700;
+      font-family: "Overpass", sans-serif;
+      color: whitesmoke;
+    }
+
+    #author {
+      font-size: 2em;
+      color: whitesmoke;
+      text-align: right;
+      font-style: italic;
+    }
+
+    .cta {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      margin-top: 60px;
+
+      i {
+        font-size: 5em;
+        margin-bottom: 30px;
+
+        &:hover {
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          transform: translate3d(0, 0, 0);
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+
+        @keyframes shake {
+          10%,
+          90% {
+            transform: translate3d(-1px, 0, 0);
+          }
+
+          20%,
+          80% {
+            transform: translate3d(2px, 0, 0);
+          }
+
+          30%,
+          50%,
+          70% {
+            transform: translate3d(-4px, 0, 0);
+          }
+
+          40%,
+          60% {
+            transform: translate3d(4px, 0, 0);
+          }
+        }
+      }
+    }
+
+    abbr {
+      align-self: end;
+
+      .btn-quote {
+
+        font-size: 60px;
+        color: $color-violet;
+        cursor: pointer;
+        transition: ease .7s;
+
+        &:hover{
+          transform: scale(1.4);
+        }
+
+        #new-quote {
+          outline: none;
+          border: none;
+        }
+      }
+    }
+  }
+}
