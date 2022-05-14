@@ -84,20 +84,20 @@ body {
     abbr {
       align-self: end;
 
-      .btn-quote {
+      #new-quote {
+        outline: none;
+        border: none;
+        background-color: transparent;
 
-        font-size: 60px;
-        color: $color-violet;
-        cursor: pointer;
-        transition: ease .7s;
+        .btn-quote {
+          font-size: 60px;
+          color: $color-violet;
+          cursor: pointer;
+          transition: ease 0.7s;
 
-        &:hover{
-          transform: scale(1.4);
-        }
-
-        #new-quote {
-          outline: none;
-          border: none;
+          &:hover {
+            transform: scale(1.4);
+          }
         }
       }
     }
