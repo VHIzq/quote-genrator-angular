@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* *reset css */
-
+@import "./mixins";
 @import "./colors";
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Overpass&family=Roboto&display=swap");
@@ -25,11 +25,19 @@ body {
     position: relative;
     top: 20vh;
 
+    @include mobile{
+      width: 80vw;
+    }
+
     #text {
       font-size: 50px;
       font-weight: 700;
       font-family: "Overpass", sans-serif;
       color: whitesmoke;
+
+      @include mobile{
+        font-size: 30px;
+      }
     }
 
     #author {
@@ -43,7 +51,7 @@ body {
       display: flex;
       flex-direction: column;
       margin: auto;
-      margin-top: 60px;
+      margin-top: 80px;
 
       i {
         font-size: 5em;

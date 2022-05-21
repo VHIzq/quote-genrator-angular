@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote } from 'src/app/interfaces/quote.interface';
+import { QuoteService } from 'src/app/services/quote.service';
 
 @Component({
   selector: 'app-quote-page',
@@ -7,14 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuotePageComponent implements OnInit {
 
-
-  constructor() { }
+  quotes: Quote[] = [];
+  constructor( private quoteService: QuoteService) { }
 
   ngOnInit(): void {
   }
 
   newQuote() {
-    console.log('hey');
+    this.quoteService.getQuotes()
+      .subscribe(quotes => {
+        console.log(quotes.slice(0, 2));
+         this.quotes = quotes.slice(0, 2);
+      })
+
   }
 
 
