@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { PagesRoutingModule } from './pages/pages-routing.module';
 import { QuotePageComponent } from './pages/quote-page/quote-page.component';
 
+import * as _ from 'lodash';
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from 'src/app/interfaces/quote.interface';
 import { QuoteService } from 'src/app/services/quote.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-quote-page',
   templateUrl: './quote-page.component.html',
-  styles: []
+  styles: [],
 })
 export class QuotePageComponent implements OnInit {
-
   quotes: Quote[] = [];
-  constructor( private quoteService: QuoteService) { }
+  oneQuote!: any;
+  
+  
+  constructor(private quoteService: QuoteService) {}
 
   ngOnInit(): void {
+   this.getQuotes();
   }
 
-  newQuote() {
-    this.quoteService.getQuotes()
-      .subscribe(quotes => {
-        console.log(quotes.slice(0, 2));
-         this.quotes = quotes.slice(0, 2);
-      })
-
+  getQuotes() {
+    this.quoteService.getQuotes().subscribe((data: Quote[]) => {
+      this.quotes = data;
+      this.oneQuote = _.sample(this.quotes);
+    });
   }
-
-
 }

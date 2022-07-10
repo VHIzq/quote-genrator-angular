@@ -1,22 +1,22 @@
 <main id="quote-box">
   <section id="text">
-    <p> {{ quotes }} </p>
+    <p> {{oneQuote?.text }}  </p>
   </section>
 
   <section id="author">
-    <p>Feynman</p>
+    <p> {{oneQuote?.author}} </p>
   </section>
 
   <section class="cta">
     <abbr title="Tweet this quote">
-      <a href="#" id="tweet-quote">
+      <a target="_blank" href="twitter.com/intent/tweet" id="tweet-quote">
         <i class="fa fa-twitter" aria-hidden="true"></i>
       </a>
     </abbr>
   </section>
 
   <abbr title="New Quote">
-    <button type="button" (click)="newQuote()" id="new-quote">
+    <button type="button" (click)="getQuotes()" id="new-quote">
       <i class="fas fa-chevron-circle-right btn-quote"></i>
     </button>
   </abbr>
