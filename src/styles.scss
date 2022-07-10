@@ -19,7 +19,7 @@ body {
   #quote-box {
     display: flex;
     margin: auto;
-    height: 60vh;
+    max-height: 60%;
     flex-direction: column;
     width: 40vw;
     position: relative;
@@ -30,28 +30,35 @@ body {
     }
 
     #text {
-      font-size: 50px;
+      font-size: 55px;
       font-weight: 700;
       font-family: "Overpass", sans-serif;
       color: whitesmoke;
 
       @include mobile{
-        font-size: 30px;
+        font-size: 25px;
       }
     }
 
     #author {
-      font-size: 2em;
+      font-size: 1.5em;
       color: whitesmoke;
       text-align: right;
       font-style: italic;
     }
 
     .cta {
-      display: flex;
-      flex-direction: column;
+      /* display: flex;
+      flex-direction: column; */
+      position: fixed;
+      left: calc(50vw - 2.5em);
+      bottom: calc(35vh - 2.5em);
       margin: auto;
       margin-top: 80px;
+      
+      @include mobile{
+        bottom: calc(23vh - 2.5em);
+      }
 
       i {
         font-size: 5em;
@@ -93,6 +100,9 @@ body {
       align-self: end;
 
       #new-quote {
+        position: fixed;
+        left: calc(100vw - 80px);
+        bottom: 30px;
         outline: none;
         border: none;
         background-color: transparent;
@@ -106,6 +116,11 @@ body {
           &:hover {
             transform: scale(1.4);
           }
+        }
+
+        @include mobile{
+          left: calc(100vw - 90px);
+          bottom: 25px;
         }
       }
     }

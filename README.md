@@ -4,7 +4,7 @@ This small web app is from Front End Mentor idea and is for getting my Front End
 
 ## Preview
 
-![App Preview](/src//img//WhatsApp%20Image%202022-05-21%20at%202.47.59%20PM.jpeg)
+![App Preview](/src//img//app-random-quote-generator.png)
 
 
 ## Installation
